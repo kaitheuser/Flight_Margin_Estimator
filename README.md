@@ -18,11 +18,17 @@
 
 ## Flight Margin Estimator Pseudocode
 1.) Create a simulated environment by defining waypoints and wind samples
+
 2.) Get UAV Starting Location.
+
 3.) Convert Wind Samples and Waypoints lists to 2D arrays.
+
 4.) Start mission by iterating through the waypoints.
+
 5.) Calculate the distance between the UAV current point and the next waypoint.
+
 6.) While the UAV is on the way to the next waypoint,
+
     a.) Calculate the weighted average wind component with the wind samples.
     b.) Calculate the ground speed of the aircraft with the weighted average wind component.
     c.) Update the total flight time
