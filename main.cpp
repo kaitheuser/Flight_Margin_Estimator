@@ -147,18 +147,7 @@ double flight_Margin_Est(double BATT_Wh, std::list<wayPt> wayPts, std::list<wind
         wayPts_2D_arr[wayPt_ID][1] = ptr -> y;                                              // Column 1 is y-coordinate.
         wayPt_ID += 1;
     }
-    
-    // Convert wind samples list to a 2D vector.
-    size_t num_wind_Samples = wind_Samples.size();                                          // Get number of wind samples.
-    size_t wind_Sample_ID = 0;                                                              // Wind Sample Number.
-    double wind_Samples_2D_arr[num_wind_Samples][4];                                        // Wind Samples in 2D array.
-    for (auto ptr = wind_Samples.begin(); ptr != wind_Samples.end(); ++ptr){
-        wind_Samples_2D_arr[wind_Sample_ID][0] = ptr -> x;                                  // Column 0 is x-coordinate.
-        wind_Samples_2D_arr[wind_Sample_ID][1] = ptr -> y;                                  // Column 1 is y-coordinate.
-        wind_Samples_2D_arr[wind_Sample_ID][2] = ptr -> speed;                              // Column 2 is wind speed.
-        wind_Samples_2D_arr[wind_Sample_ID][3] = ptr -> angle;                              // Column 3 is wind direction.
-        wind_Sample_ID += 1;
-    }
+
     
     // Start running the mission (Set second waypoint as the first target)
     for (size_t wayPt_ID = 1; wayPt_ID < num_wayPts; ++wayPt_ID){
@@ -192,7 +181,7 @@ double flight_Margin_Est(double BATT_Wh, std::list<wayPt> wayPts, std::list<wind
     
     // Calculate the remaining battery energy [Wh].
     BATT_remaining_Wh = BATT_Wh - PWR_Usage * total_Flight_Time /3600;
-    std::cout << "Estimated Total Flight Time: " << total_Flight_Time/3600 << "hour" << std::endl;
+    std::cout << "Estimated Total Flight Time: " << total_Flight_Time/3600 << " hour" << std::endl;
     
     // Battery is low if each cell is less than 3.6V
     if (BATT_remaining_Wh > 525 && BATT_remaining_Wh <= 540){
