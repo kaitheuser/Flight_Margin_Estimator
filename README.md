@@ -45,8 +45,13 @@
 
 ## Customizable Parameters
 1.) `UAV_PWR_Usage` `line 18` - UAV power consumption at constant airspeed [W]
+
 2.) `UAV_BATT_Wh` `line 19` - UAV fully charged battery energy [Wh]
+
 3.) `wayPt_Radius` `line 23`- Target is considered reached if the UAV is within the waypoint distance range [m].
+
 4.) `UAV_airSPD` `line 24`- UAV airspeed [m/s].
+
 5.) `path_Res` `line 28`- Path resolution/step[m]
+
 
