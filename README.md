@@ -1,5 +1,5 @@
 # Zipline Flight Margin Estimator
-##How to run the code:
+## How to run the code:
 1.) Download and extract the "Zipline_Flight_Margin_Estimator.zip".
 
 2.) Open a terminal window.
